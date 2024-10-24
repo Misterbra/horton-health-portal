@@ -16,12 +16,12 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Portail Maladie de Horton",
-  description: "Portail de suivi et d'information pour les patients atteints de la maladie de Horton",
+  description: "Portail d'information pour les patients atteints de la maladie de Horton",
   keywords: "maladie de horton, suivi médical, symptômes, traitement, vascularite",
   authors: [{ name: "Portail Maladie de Horton" }],
   openGraph: {
     title: "Portail Maladie de Horton",
-    description: "Suivi personnalisé et ressources pour la maladie de Horton",
+    description: "Ressources pour la maladie de Horton",
     type: "website",
   },
   themeColor: [
