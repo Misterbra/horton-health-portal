@@ -42,13 +42,6 @@ interface MobileNavProps {
   setActiveTab: (tab: string) => void;
 }
 
-interface StatsCardProps {
-  title: string;
-  value: string | number;
-  icon: LucideIcon;
-  trend?: number;
-}
-
 interface TimelineItemProps {
   title: string;
   date: string;
