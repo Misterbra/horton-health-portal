@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { LucideIcon } from 'lucide-react';
 import { 
   Activity, Brain, BookOpen, Leaf, 
-  Sun, Moon, Search, Clock, Info,
+  Sun, Moon, Clock,
   Menu, X, ChevronRight, Heart, Shield,
-  Zap, Coffee, Bone, Battery, Star, Award
+  Zap, Coffee, Battery, Star, Award
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -15,7 +15,6 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   Tooltip,
   TooltipContent,
@@ -75,12 +74,6 @@ const fadeIn = {
   exit: { opacity: 0, y: -20 }
 };
 
-const slideIn = {
-  initial: { x: -60, opacity: 0 },
-  animate: { x: 0, opacity: 1 },
-  exit: { x: 60, opacity: 0 }
-};
-
 // Composants de base
 const EnhancedCard: React.FC<EnhancedCardProps> = ({ 
   title, 
@@ -129,29 +122,6 @@ const InfoTooltip: React.FC<InfoTooltipProps> = ({ content, children }) => (
       </TooltipContent>
     </Tooltip>
   </TooltipProvider>
-);
-
-const StatsCard: React.FC<StatsCardProps> = ({ title, value, icon: Icon, trend }) => (
-  <Card className="overflow-hidden bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow">
-    <CardContent className="p-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <p className="text-sm text-gray-500 dark:text-gray-400">{title}</p>
-          <h4 className="text-2xl font-bold mt-1">{value}</h4>
-          {trend !== undefined && (
-            <p className={`text-sm mt-2 ${
-              trend > 0 ? 'text-green-500' : 'text-red-500'
-            }`}>
-              {trend > 0 ? '↑' : '↓'} {Math.abs(trend)}%
-            </p>
-          )}
-        </div>
-        <div className="p-3 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg">
-          <Icon className="h-6 w-6 text-white" />
-        </div>
-      </div>
-    </CardContent>
-  </Card>
 );
 
 // Composant Timeline
@@ -249,8 +219,8 @@ const ProtocolSection: React.FC = () => (
           <h3 className="text-xl font-semibold mb-4">Planning Quotidien Expliqué</h3>
           <p className="mb-4 text-white/90">
             Le timing de prise des compléments et des repas a été optimisé selon les dernières 
-            recherches sur l'inflammation et le rythme circadien. La période de jeûne de 14h permet 
-            de réduire naturellement l'inflammation vasculaire.
+            recherches sur l&apos;inflammation et le rythme circadien. La période de jeûne de 14h permet 
+            de réduire naturellement l&apos;inflammation vasculaire.
           </p>
           <div className="space-y-4">
             <TimelineItem
@@ -372,10 +342,10 @@ const ProtocolSection: React.FC = () => (
         <div className="mb-6 bg-white/10 backdrop-blur-sm p-6 rounded-xl">
           <h3 className="text-xl font-semibold mb-4">Principes Fondamentaux</h3>
           <p className="text-white/90 mb-4">
-            L'alimentation joue un rôle crucial dans la maladie de Horton en influençant 
+            L&apos;alimentation joue un rôle crucial dans la maladie de Horton en influençant 
             directement les mécanismes inflammatoires et la santé vasculaire. Les choix 
-            alimentaires peuvent soit atténuer soit exacerber l'inflammation systémique et 
-            l'activation de la voie mTOR, récemment identifiée comme centrale dans la maladie.
+            alimentaires peuvent soit atténuer soit exacerber l&apos;inflammation systémique et 
+            l&apos;activation de la voie mTOR, récemment identifiée comme centrale dans la maladie.
           </p>
         </div>
 
@@ -521,11 +491,11 @@ const ProtocolSection: React.FC = () => (
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-              <h4 className="font-semibold mb-4">Conseils Pratiques d'Application</h4>
+              <h4 className="font-semibold mb-4">Conseils Pratiques d&apos;Application</h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2">
                   <ChevronRight className="h-4 w-4 mt-1 flex-shrink-0" />
-                  <span>Préparer ses repas à l'avance pour éviter les écarts alimentaires</span>
+                  <span>Préparer ses repas à l&apos;avance pour éviter les écarts alimentaires</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ChevronRight className="h-4 w-4 mt-1 flex-shrink-0" />
@@ -598,7 +568,7 @@ const ResearchSection: React.FC = () => (
               VAP-1 et Inflammation
             </h3>
             <p className="mb-4">
-              Nouvelles découvertes sur le rôle de la protéine d'adhésion vasculaire 1 (VAP-1).
+              Nouvelles découvertes sur le rôle de la protéine d&apos;adhésion vasculaire 1 (VAP-1).
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               <div className="bg-black/20 p-4 rounded-lg">
@@ -606,7 +576,7 @@ const ResearchSection: React.FC = () => (
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
                     <ChevronRight className="h-4 w-4" />
-                    Biomarqueur potentiel d'activité
+                    Biomarqueur potentiel d&apos;activité
                   </li>
                   <li className="flex items-center gap-2">
                     <ChevronRight className="h-4 w-4" />
@@ -619,7 +589,7 @@ const ResearchSection: React.FC = () => (
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
                     <ChevronRight className="h-4 w-4" />
-                    Développement d'inhibiteurs spécifiques
+                    Développement d&apos;inhibiteurs spécifiques
                   </li>
                   <li className="flex items-center gap-2">
                     <ChevronRight className="h-4 w-4" />
@@ -835,7 +805,7 @@ const HortonDiseasePage: React.FC = () => {
                 >
                   <Activity className="h-5 w-5" />
                 </motion.div>
-                En cas d'urgence
+                En cas d&apos;urgence
               </AlertTitle>
               <AlertDescription className="text-red-700 dark:text-red-300">
                 En cas de perte soudaine de vision, maux de tête sévères ou douleur intense 
